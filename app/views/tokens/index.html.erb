@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tokens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meeting Id</th>
+      <th colspan="1"></th>
+      <th>Token</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @tokens.each do |token| %>
+      <tr>
+        <td><%= token.meeting_id %></td>
+        <td><%= link_to 'Destroy', token, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= token.token %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Token', new_token_path %>
